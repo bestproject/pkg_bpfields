@@ -12,6 +12,4 @@ if ($field->value == '')
 	return;
 }
 
-$value  = (array) $field->value;
-
-echo $value;
+echo $field->value;
