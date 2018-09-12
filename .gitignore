@@ -2,8 +2,9 @@
 
 !/plugins/
 !/plugins/fields/
-!/plugins/fields/bpfilelist/
+!/plugins/fields/**/*
 !/plugins/fields/bpfilelist/**/*
+!/plugins/fields/bpcheckbox/**/*
 
 
 !/LICENSE
