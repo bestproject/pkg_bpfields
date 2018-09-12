@@ -2,13 +2,16 @@
 !/plugins/
 /plugins/*
 !/plugins/fields/
-!/plugins/fields/*
-!/plugins/fields/bpfilelist/**/*
-!/plugins/fields/bpcheckbox/**/*
+/plugins/fields/*
+!/plugins/fields/bpfilelist/
+!/plugins/fields/bpfilelist/*
+!/plugins/fields/bpcheckbox/
+!/plugins/fields/bpcheckbox/*
 
 
 !/LICENSE
 !/README.md
 !/build.xml
 !/composer.json
+!/composer.lock
 !/.gitignore
