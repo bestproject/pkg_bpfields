@@ -35,6 +35,14 @@
 				description="PLG_FIELDS_IMAGELIST_PARAMS_IMAGE_CLASS_DESC"
 				size="40"
 			/>
+            <field
+				name="text"
+				type="editor"
+				label="PLG_FIELDS_BPFILELIST_PARAMS_TEXT_LABEL"
+				description="PLG_FIELDS_BPFILELIST_PARAMS_TEXT_DESC"
+                filter="safehtml"
+                buttons="readmore"
+            />
 		</fieldset>
 	</fields>
 </form>

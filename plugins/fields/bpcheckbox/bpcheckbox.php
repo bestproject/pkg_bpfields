@@ -33,8 +33,10 @@ class PlgFieldsBPCheckbox extends FieldsListPlugin
 			return $fieldNode;
 		}
 
-        $fieldNode->setAttribute('type', 'checkbox');
-        $fieldNode->setAttribute('filter', '(.*)');
+        $fieldNode->setAttribute('type', 'bpcheckbox');
+        $fieldNode->setAttribute('hiddenLabel', 'true');
+        $fieldNode->setAttribute('addfieldpath', '/plugins/fields/bpcheckbox/fields');
+        $fieldNode->setAttribute('text', $field->fieldparams->get('text'));
 
 		return $fieldNode;
 	}
