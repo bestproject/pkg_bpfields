@@ -4,9 +4,9 @@ A pack of Joomla! 3 custom fields plugins.
 ## Note
 This package is still under development therefore there is no release file. It should be ready in few weeks.
 
-##Currently ready plugins:
+## Currently ready plugins:
 
-###BP Checkbox
+### BP Checkbox
 Checkbox that allows you to use WYSIWYG editor to prepare checkbox label. Helpful when creating "Terms of use" checkboxes
 cause of GDPR law.
 
