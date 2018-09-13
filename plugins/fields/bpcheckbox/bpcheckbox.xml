@@ -11,6 +11,7 @@
 	<description>PLG_FIELDS_BPCHECKBOX_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="bpcheckbox">bpcheckbox.php</filename>
+		<folder>fields</folder>
 		<folder>params</folder>
 		<folder>tmpl</folder>
 	</files>
