@@ -64,6 +64,40 @@
         <zip destfile="./.build/plg_fields_bpcheckbox.zip" basedir="./.build/plg_fields_bpcheckbox"/>
     </target>
     
+    <target name="build:pkg_bpfields">
+        <echo msg="Creating package directory" />
+        <mkdir dir="./.build/pkg_bpfields/packages" />
+        
+        <echo msg="Building package installer" />
+        <copy todir="./.build/pkg_bpfields" >
+            <fileset dir="./administrator/manifests/packages">
+                <include name="pkg_bpfields.xml" />
+            </fileset>
+            <filterchain>
+                <replacetokens begintoken="${" endtoken="}">
+                    <token key="build.date" value="${build.date}" />
+                    <token key="build.year" value="${build.year}" />
+                    <token key="copyrights" value="${copyrights}" />
+                    <token key="license.name" value="${license.name}" />
+                    <token key="license.url" value="${license.url}" />
+                    <token key="version" value="${version}" />
+                    <token key="package" value="${package}" />
+                    <token key="author.url" value="${author.url}" />
+                    <token key="author.name" value="${author.name}" />
+                    <token key="author.email" value="${author.email}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+        <copy todir="./.build/pkg_bpfields/packages" >
+            <fileset dir="./.build/">
+                <include name="*.zip" />
+            </fileset>
+        </copy>
+
+        <echo msg="Creating package zipfile." />
+        <zip destfile="./.build/pkg_bpfields.zip" basedir="./.build/pkg_bpfields"/>
+    </target>
+    
     <target name="build">
         <echo msg="Creating build directory ./.build" />
         <mkdir dir="./.build" />
@@ -71,6 +105,9 @@
         <echo msg="Building each of the extensions" />
         <phingcall target="build:plg_fields_bpfilelist"></phingcall>
         <phingcall target="build:plg_fields_bpcheckbox"></phingcall>
+        
+        <echo msg="Building extensions package" />
+        <phingcall target="build:pkg_bpfields"></phingcall>
         
     </target>
 

@@ -8,6 +8,14 @@
 !/plugins/fields/bpcheckbox/
 !/plugins/fields/bpcheckbox/*
 
+!/administrator/
+/administrator/*
+!/administrator/manifests/
+/administrator/manifests/*
+!/administrator/manifests/packages/
+/administrator/manifests/packages/*
+!/administrator/manifests/packages/pkg_bpfields.xml
+
 
 !/LICENSE
 !/README.md
