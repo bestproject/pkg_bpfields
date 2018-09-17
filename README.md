@@ -2,7 +2,7 @@
 A pack of Joomla! 3 custom fields plugins.
 
 ## Note
-This package is still under development therefore there is no release file. It should be ready in few weeks.
+If you need only a single field type, unpack package file `pkg_bpfields_v*.zip` and find your desired field in `/packages` directory.
 
 ## Currently ready plugins:
 
