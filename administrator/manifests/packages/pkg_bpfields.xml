@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.8" method="upgrade">
+	<name>BP Fields</name>
+	<packagename>bpfields</packagename>
+	<version>${version}</version>
+	<creationDate>${build.date}</creationDate>
+	<author>${author.name}</author>
+	<authorEmail>${author.email}</authorEmail>
+	<authorUrl>${author.url}</authorUrl>
+	<copyright>Copyright (C) ${build.year} ${copyrights}. All rights reserved.</copyright>
+	<license>${license.name}, see ${license.url}</license>
+	<url>https://github.com/bestproject/pkg_bpfields</url>
+	<packager>${author.name}</packager>
+	<packagerurl>${author.url}</packagerurl>
+	<description>Set of Joomla! custom field types useful in creating custom content or forms.</description>
+    
+	<blockChildUninstall>true</blockChildUninstall>
+    
+	<files folder="packages">
+		<file type="plugin" id="bpcheckbox" group="fields">plg_fields_bpcheckbox.zip</file>
+		<file type="plugin" id="bpfilelist" group="fields">plg_fields_bpfilelist.zip</file>
+	</files>
+</extension>

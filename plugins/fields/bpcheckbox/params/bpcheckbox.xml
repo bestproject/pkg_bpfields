@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="fieldparams">
+		<fieldset name="fieldparams">
+			<field
+				name="text"
+				type="editor"
+				label="PLG_FIELDS_BPCHECKBOX_PARAMS_TEXT_LABEL"
+				description="PLG_FIELDS_BPCHECKBOX_PARAMS_TEXT_DESC"
+                filter="safehtml"
+                buttons="true"
+                hide="pagebreak,module"
+            />
+		</fieldset>
+	</fields>
+</form>
