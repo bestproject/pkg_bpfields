@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="plugin" version="3.7.0" group="fields" method="upgrade">
+	<name>plg_fields_bpcheckbox</name>
+	<author>${author.name}</author>
+	<creationDate>${build.date}</creationDate>
+	<copyright>Copyright (C) ${build.year} ${copyrights}. All rights reserved.</copyright>
+	<license>${license.name}, see ${license.url}</license>
+	<authorEmail>${author.email}</authorEmail>
+	<authorUrl>${author.url}</authorUrl>
+	<version>${version}</version>
+	<description>PLG_FIELDS_BPCHECKBOX_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="bpcheckbox">bpcheckbox.php</filename>
+		<folder>fields</folder>
+		<folder>params</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_fields_bpcheckbox.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_fields_bpcheckbox.sys.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.plg_fields_bpcheckbox.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.plg_fields_bpcheckbox.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+			</fieldset>
+		</fields>
+	</config>
+</extension>

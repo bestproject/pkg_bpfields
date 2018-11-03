@@ -1,13 +1,25 @@
-/**
-
+/*
 !/plugins/
+/plugins/*
 !/plugins/fields/
+/plugins/fields/*
 !/plugins/fields/bpfilelist/
-!/plugins/fields/bpfilelist/**/*
+!/plugins/fields/bpfilelist/*
+!/plugins/fields/bpcheckbox/
+!/plugins/fields/bpcheckbox/*
+
+!/administrator/
+/administrator/*
+!/administrator/manifests/
+/administrator/manifests/*
+!/administrator/manifests/packages/
+/administrator/manifests/packages/*
+!/administrator/manifests/packages/pkg_bpfields.xml
 
 
 !/LICENSE
 !/README.md
 !/build.xml
 !/composer.json
+!/composer.lock
 !/.gitignore
