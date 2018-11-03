@@ -126,7 +126,11 @@ class JFormFieldBPCheckbox extends JFormField
     {
 
         /* @var $layout FileLayout */
-        $layout = new FileLayout('joomla.form.field.bpcheckbox', JPATH_PLUGINS.'/fields/bpcheckbox/layouts');
+        $layout = new FileLayout('joomla.form.field.bpcheckbox');
+
+        $includePaths = $layout->getIncludePaths();
+        $includePaths[] = JPATH_PLUGINS.'/fields/bpcheckbox/layouts';
+        $layout->setIncludePaths($includePaths);
 
         // Field attributes
         $attributes = [
