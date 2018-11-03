@@ -136,6 +136,8 @@ class JFormFieldBPCheckbox extends JFormField
         $attributes = [
             'class' => trim($this->class.' bpcheckbox'),
             'value' => !empty($this->default) ? htmlspecialchars($this->default, ENT_COMPAT, 'UTF-8') : '',
+            'id' => $this->id,
+            'name' => $this->name,
         ];
 
         // Is field disabled
