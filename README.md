@@ -21,3 +21,9 @@ Then do as follows:
 - `composer install`
 - `composer build`
 - Your installation zip files should now be read in `/.build` directory.
+
+## Changelog
+
+### v1.0.3
+- Moving HTML to layout file to allow override
+- Include scripts only if they are required
