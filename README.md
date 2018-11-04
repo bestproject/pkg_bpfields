@@ -24,6 +24,10 @@ Then do as follows:
 
 ## Changelog
 
+### v1.0.4
+- Fixed layout overrides path order
+- Added missing input ID and NAME attributes
+
 ### v1.0.3
 - Moving HTML to layout file to allow override
 - Include scripts only if they are required
