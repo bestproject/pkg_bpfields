@@ -7,6 +7,8 @@
 !/plugins/fields/bpfilelist/*
 !/plugins/fields/bpcheckbox/
 !/plugins/fields/bpcheckbox/*
+!/plugins/fields/bpfolderlist/
+!/plugins/fields/bpfolderlist/*
 
 !/administrator/
 /administrator/*

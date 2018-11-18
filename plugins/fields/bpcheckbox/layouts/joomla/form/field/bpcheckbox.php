@@ -15,12 +15,12 @@ use Joomla\CMS\Factory;
 defined('JPATH_BASE') or die;
 
 JHtml::_('jquery.framework');
-JHtml::_('script', 'system/html5fallback.js', array('version' => 'auto', 'relative' => true, 'conditional' => 'lt IE 9'));
+JHtml::_('script', 'system/html5fallback.js', ['version' => 'auto', 'relative' => true, 'conditional' => 'lt IE 9']);
 
 // This checkbox has a readmore
 $has_readmore = stripos($displayData['text'], '<hr id="system-readmore" />') !== false;
 if( $has_readmore ) {
-    
+
     /* @var $doc HtmlDocument */
     $doc = Factory::getDocument();
     $doc->addScriptDeclaration("

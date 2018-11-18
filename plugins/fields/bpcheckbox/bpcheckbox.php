@@ -32,9 +32,13 @@ class PlgFieldsBPCheckbox extends FieldsPlugin
 		{
 			return $fieldNode;
 		}
+        
+        $defaultValue = $field->default_value;
 
         $fieldNode->setAttribute('type', 'bpcheckbox');
         $fieldNode->setAttribute('hiddenLabel', 'true');
+        $fieldNode->setAttribute('default', empty($defaultValue) ? JText::_('JYES') : $defaultValue);
+//        $fieldNode->setAttribute('value', empty($defaultValue) ? JText::_('JYES') : $defaultValue);
         $fieldNode->setAttribute('addfieldpath', '/plugins/fields/bpcheckbox/fields');
         $fieldNode->setAttribute('text', $field->fieldparams->get('text'));
 

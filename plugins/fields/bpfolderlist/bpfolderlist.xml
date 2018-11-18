@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="plugin" version="3.7.0" group="fields" method="upgrade">
+	<name>plg_fields_bpfolderlist</name>
+	<author>${author.name}</author>
+	<creationDate>${build.date}</creationDate>
+	<copyright>Copyright (C) ${build.year} ${copyrights}. All rights reserved.</copyright>
+	<license>${license.name}, see ${license.url}</license>
+	<authorEmail>${author.email}</authorEmail>
+	<authorUrl>${author.url}</authorUrl>
+	<version>${version}</version>
+	<description>PLG_FIELDS_BPFOLDERLIST_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="bpfolderlist">bpfolderlist.php</filename>
+		<folder>params</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_fields_bpfolderlist.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_fields_bpfolderlist.sys.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.plg_fields_bpfolderlist.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.plg_fields_bpfolderlist.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="directory"
+					type="folderlist"
+					label="PLG_FIELDS_BPFOLDERLIST_PARAMS_DIRECTORY_LABEL"
+					description="PLG_FIELDS_BPFOLDERLIST_PARAMS_DIRECTORY_DESC"
+					directory="images"
+					hide_none="true"
+					hide_default="true"
+					recursive="true"
+					default="/"
+					>
+					<option value="/">/</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

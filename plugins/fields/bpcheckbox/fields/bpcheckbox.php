@@ -16,7 +16,7 @@ defined('JPATH_PLATFORM') or die;
 /**
  * A Checkbox field wrapper used in BP Fields.
  */
-class JFormFieldBPCheckbox extends JFormField
+class JFormFieldBPCheckbox extends \Joomla\CMS\Form\FormField
 {
     /**
      * The form field type.
@@ -32,6 +32,13 @@ class JFormFieldBPCheckbox extends JFormField
 
      */
     protected $checked = false;
+
+    /**
+     * Name of the layout being used to render the field
+     *
+     * @var    string
+     */
+    protected $layout = 'joomla.form.field.bpcheckbox';
 
     /**
      * HTML field label text.
@@ -95,13 +102,14 @@ class JFormFieldBPCheckbox extends JFormField
     {
         // Handle the default attribute
         $default = (string) $element['default'];
+        $this->default = $default;
 
         if ($default) {
             $test = $this->form->getValue((string) $element['name'], $group);
 
             $value = ($test == $default) ? $default : null;
         }
-
+        
         $return = parent::setup($element, $value, $group);
 
         if ($return) {
@@ -109,9 +117,9 @@ class JFormFieldBPCheckbox extends JFormField
             $this->checked = ($checked == 'true' || $checked == 'checked' || $checked == '1');
 
             empty($this->value) || $this->checked ? null : $this->checked = true;
-
-            $this->text = (string) $this->element['text'];
         }
+
+        $this->text = (string) $this->element['text'];
 
         return $return;
     }
@@ -124,18 +132,37 @@ class JFormFieldBPCheckbox extends JFormField
      */
     protected function getInput()
     {
+        // If there is no layout, throw exception
+        if (empty($this->layout)) {
+            throw new UnexpectedValueException(sprintf('%s has no layout assigned.', $this->name));
+        }
 
-        /* @var $layout FileLayout */
-        $layout = new FileLayout('joomla.form.field.bpcheckbox');
-
-        $includePaths = $layout->getIncludePaths();
+        // Prepare renderer
+        $renderer       = $this->getRenderer($this->layout);
+        $includePaths   = $renderer->getIncludePaths();
         $includePaths[] = JPATH_PLUGINS.'/fields/bpcheckbox/layouts';
-        $layout->setIncludePaths($includePaths);
+        $renderer->setIncludePaths($includePaths);
+
+        // Render field layout
+        return $renderer->render($this->getLayoutData());
+    }
+
+    /**
+     * Get layout data.
+     * 
+     * @return array
+     */
+    protected function getLayoutData()
+    {
+        $data = parent::getLayoutData();
+
+        // True if the field has 'value' set. In other words, it has been stored, don't use the default values.
+        $hasValue = (isset($this->value) && !empty($this->value));
 
         // Field attributes
         $attributes = [
             'class' => trim($this->class.' bpcheckbox'),
-            'value' => empty($this->value) ? $this->default : $this->value,
+            'value' => $hasValue ? $this->value : $this->default,
             'id' => $this->id,
             'name' => $this->name,
         ];
@@ -147,7 +174,8 @@ class JFormFieldBPCheckbox extends JFormField
 
         // Is field required
         if ($this->required) {
-            $attributes['required'] = '';
+            $attributes['required']      = '';
+            $attributes['aria-required'] = 'true';
         }
 
         // Should field be focused on default
@@ -170,9 +198,12 @@ class JFormFieldBPCheckbox extends JFormField
             $attributes['onchange'] = $this->onchange;
         }
 
-        return $layout->render([
-                'attributes' => $attributes,
-                'text' => $this->text
-        ]);
+        $extraData = [
+            'hasValue' => $hasValue,
+            'attributes' => $attributes,
+            'text' => $this->text
+        ];
+
+        return array_merge($data, $extraData);
     }
 }
