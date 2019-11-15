@@ -20,5 +20,6 @@
 		<file type="plugin" id="bpcheckbox" group="fields">plg_fields_bpcheckbox.zip</file>
 		<file type="plugin" id="bpfilelist" group="fields">plg_fields_bpfilelist.zip</file>
 		<file type="plugin" id="bpfolderlist" group="fields">plg_fields_bpfolderlist.zip</file>
+		<file type="plugin" id="bpmenuitem" group="fields">plg_fields_bpmenuitem.zip</file>
 	</files>
 </extension>

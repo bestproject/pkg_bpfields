@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="fieldparams">
+		<fieldset name="fieldparams" addfieldpath="/administrator/components/com_menus/models/fields">
+			<field
+					name="link_name"
+					type="text"
+					label="PLG_FIELDS_BPMENUITEM_PARAMS_LINK_NAME_LABEL"
+					description="PLG_FIELDS_BPMENUITEM_PARAMS_LINK_NAME_DESC"
+			/>
+		</fieldset>
+	</fields>
+</form>

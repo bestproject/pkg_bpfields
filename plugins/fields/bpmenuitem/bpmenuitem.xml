@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="plugin" version="3.7.0" group="fields" method="upgrade">
+	<name>plg_fields_bpmenuitem</name>
+	<author>${author.name}</author>
+	<creationDate>${build.date}</creationDate>
+	<copyright>Copyright (C) ${build.year} ${copyrights}. All rights reserved.</copyright>
+	<license>${license.name}, see ${license.url}</license>
+	<authorEmail>${author.email}</authorEmail>
+	<authorUrl>${author.url}</authorUrl>
+	<version>${version}</version>
+	<description>PLG_FIELDS_BPMENUITEM_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="bpmenuitem">bpmenuitem.php</filename>
+		<folder>params</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_fields_bpmenuitem.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_fields_bpmenuitem.sys.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.plg_fields_bpmenuitem.ini</language>
+		<language tag="pl-PL">pl-PL/pl-PL.plg_fields_bpmenuitem.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_menus/models/fields">
+				<field
+						name="link_name"
+						type="text"
+						label="PLG_FIELDS_BPMENUITEM_PARAMS_LINK_NAME_LABEL"
+						description="PLG_FIELDS_BPMENUITEM_PARAMS_LINK_NAME_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -35,6 +35,35 @@
         <zip destfile="./.build/plg_fields_bpfilelist.zip" basedir="./.build/plg_fields_bpfilelist"/>
     </target>
     
+    <target name="build:plg_fields_bpmenuitem">
+        <echo msg="Creating plugin directory" />
+        <mkdir dir="./.build/plg_fields_bpmenuitem" />
+        
+        <echo msg="Building plugin installer" />
+        <copy todir="./.build/plg_fields_bpmenuitem" >
+            <fileset dir="./plugins/fields/bpmenuitem">
+                <include name="**/*" />
+            </fileset>
+            <filterchain>
+                <replacetokens begintoken="${" endtoken="}">
+                    <token key="build.date" value="${build.date}" />
+                    <token key="build.year" value="${build.year}" />
+                    <token key="copyrights" value="${copyrights}" />
+                    <token key="license.name" value="${license.name}" />
+                    <token key="license.url" value="${license.url}" />
+                    <token key="version" value="${version}" />
+                    <token key="package" value="${package}" />
+                    <token key="author.url" value="${author.url}" />
+                    <token key="author.name" value="${author.name}" />
+                    <token key="author.email" value="${author.email}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+        <echo msg="Creating plugin zipfile." />
+        <zip destfile="./.build/plg_fields_bpmenuitem.zip" basedir="./.build/plg_fields_bpmenuitem"/>
+    </target>
+    
     <target name="build:plg_fields_bpcheckbox">
         <echo msg="Creating plugin directory" />
         <mkdir dir="./.build/plg_fields_bpcheckbox" />
